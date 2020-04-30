@@ -1,0 +1,31 @@
+.header {
+    grid-area: h;
+    background-color: #9c9c9c;
+    border: 1px solid #924902;
+    border-radius: 5px;
+
+
+
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 5px;
+    grid-template-rows: 98%;
+}
+
+.imgH{
+
+}
+img {
+
+    margin: 1px;
+    width: 99%;
+    height: 98%;
+}
+
+.menu {
+    border: 1px solid #924902;
+    border-radius: 2px;
+    margin: 1px;
+}
+
+

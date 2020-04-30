@@ -1,0 +1,18 @@
+.navbar {
+    grid-area: n;
+    background-color: #9c9c9c;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    text-align: center;
+    height: 300px;
+    padding: 20px;
+}
+
+.navbar a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.navbar a.active {
+    color: gold;
+}

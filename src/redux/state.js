@@ -1,5 +1,7 @@
+import {reRenderUI} from "../render";
+
 let state = {
-    profilePage: [
+    profilePagePosts: [
         {id: 1, message: `some post`, likesCount: 12},
         {id: 2, message: `some post`, likesCount: 11}
     ],
@@ -18,6 +20,17 @@ let state = {
         ]
     },
     sidebar: {id: 1}
+}
+
+export let addPost = (newPostMessage) => {
+    let newPost = {
+        id: 3,
+        message: newPostMessage,
+        likesCount: 0
+    };
+
+    state.profilePagePosts.push(newPost)
+    reRenderUI(state);
 }
 
 export default state;

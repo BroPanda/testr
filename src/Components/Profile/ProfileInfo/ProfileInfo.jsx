@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src="https://booongo.com/media/public/uploads/2020/03/26/great_panda_poster_1280_ydjms.jpg"
+                <img src="https://image.freepik.com/free-photo/panorama-clearly-milky-way-galaxy-with-stars-space-dust-universe_33900-97.jpg"
                      alt=""/>
             </div>
             <div className={css.descriptionBlock}>

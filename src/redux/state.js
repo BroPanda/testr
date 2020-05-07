@@ -1,10 +1,13 @@
 import {reRenderUI} from "../render";
 
 let state = {
-    profilePagePosts: [
-        {id: 1, message: `some post`, likesCount: 12},
-        {id: 2, message: `some post`, likesCount: 11}
-    ],
+    profilePagePosts: {
+        posts: [
+            {id: 1, message: `some post`, likesCount: 12},
+            {id: 2, message: `some post`, likesCount: 11}
+        ],
+        newPostText: "type post"
+    },
     dialogPage: {
         dialogData: [
             {id: 1, name: 'Goga'},
@@ -22,14 +25,19 @@ let state = {
     sidebar: {id: 1}
 }
 
-export let addPost = (newPostMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        message: newPostMessage,
+        message: state.profilePagePosts.newPostText,
         likesCount: 0
     };
 
-    state.profilePagePosts.push(newPost)
+    state.profilePagePosts.posts.push(newPost)
+    state.profilePagePosts.newPostText = ``;
+    reRenderUI(state);
+}
+export let updatePostText = (newText) => {
+    state.profilePagePosts.newPostText = newText;
     reRenderUI(state);
 }
 

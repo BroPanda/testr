@@ -1,19 +1,20 @@
 import React from "react";
 import css from './MyPosts.module.css'
 import Post from "./Post/Post";
+import {addPostAC, onPostChangeAC} from "../../../redux/state";
 
 const MyPosts = (props) => {
     let {posts, newPostText} = props.profilePagePosts;
     const newPostElement = React.createRef();
-    const clickAddPost = () => {
-        props.addPost();
-    };
     let postDataElements = posts.map(el => <Post value={el}/>);
+
+    const clickAddPost = () => {
+        props.dispatch(addPostAC())
+    };
     let onPostChange = () => {
         let text = newPostElement.current.value
         console.log(text);
-        props.updatePostText(text)
-    }
+        props.dispatch(onPostChangeAC(text))}
 
     return (
         <div className={css.postBlock}>

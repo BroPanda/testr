@@ -1,6 +1,25 @@
-import {reRenderUI} from "./render";
-import state from "./redux/state";
+import store from "./redux/state";
+import ReactDOM from "react-dom";
+import {BrowserRouter} from "react-router-dom";
+import React from "react";
+import App from "./App";
 
-reRenderUI(state);
+let RenderUI = () => {
+    ReactDOM.render(
+        <BrowserRouter>
+            <React.StrictMode>
+                <App
+                    appState={store.getState()}
+                    dispatch = {store.dispatch.bind(store)}
 
-//asdasdasd
+                />
+            </React.StrictMode>
+        </BrowserRouter>,
+
+        document.getElementById('root')
+    )
+}
+
+RenderUI();
+
+store.subscribe(RenderUI);
